@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+    <link
+        name="base_link">
+    </link>
+
+
+    <joint name="chassis_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="chassis" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+
+    <link
+        name="chassis">
+        <inertial>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <mass
+                value="11.801" />
+            <inertia
+                ixx="0.046035"
+                ixy="4.7079E-06"
+                ixz="2.9642E-05"
+                iyy="0.039396"
+                iyz="0.00027246"
+                izz="0.054358" />
+        </inertial>
+
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/base_link.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="1 1 1 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link
+        name="left_front_link">
+        <inertial>
+            <origin
+                xyz="0.00088151 -2.8241E-07 3.0341E-07"
+                rpy="0 0 0" />
+            <mass
+                value="5.1618" />
+            <inertia
+                ixx="0.044963"
+                ixy="-3.8073E-10"
+                ixz="-2.8296E-08"
+                iyy="0.028643"
+                iyz="9.941E-08"
+                izz="0.028643" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0.00088151 -2.8241E-07 3.0341E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/left_front_link.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.59216 0.66667 0.68235 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0.00088151 -2.8241E-07 3.0341E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/left_front_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint
+        name="left_front_joint"
+        type="continuous">
+        <origin
+            xyz="-0.4431 0.54864 -0.31049"
+            rpy="0 0 0" />
+        <parent
+            link="chassis" />
+        <child
+            link="left_front_link" />
+        <axis
+            xyz="-1 0 0" />
+        <limit
+            effort="50000"
+            velocity="50000" />
+        <dynamics
+            damping="0.05"
+            friction="0.05" />
+    </joint>
+
+
+    <link
+        name="right_front_link">
+        <inertial>
+            <origin
+                xyz="-0.00071015 -1.2076E-07 3.9009E-07"
+                rpy="0 0 0" />
+            <mass
+                value="5.2535" />
+            <inertia
+                ixx="0.045037"
+                ixy="-4.2609E-10"
+                ixz="-1.9399E-10"
+                iyy="0.028748"
+                iyz="-9.1093E-09"
+                izz="0.028748" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="-0.00071015 -1.2076E-07 3.9009E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/right_front_link.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.75294 0.75294 0.75294 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="-0.00071015 -1.2076E-07 3.9009E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/right_front_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint
+        name="right_front_joint"
+        type="continuous">
+        <origin
+            xyz="0.4431 +0.54862 -0.31053"
+            rpy="0 0 0" />
+        <parent
+            link="chassis" />
+        <child
+            link="right_front_link" />
+        <axis
+            xyz="-1 0 0" />
+        <limit
+            effort="50000"
+            velocity="50000" />
+        <dynamics
+            damping="0.05"
+            friction="0.05" />
+    </joint>
+
+
+    <link
+        name="left_rear_link">
+        <inertial>
+            <origin
+                xyz="0.00088151 1.2287E-07 3.9552E-07"
+                rpy="0 0 0" />
+            <mass
+                value="5.1618" />
+            <inertia
+                ixx="0.044963"
+                ixy="-4.2615E-10"
+                ixz="-2.783E-08"
+                iyy="0.028643"
+                iyz="9.1342E-09"
+                izz="0.028643" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0.00088151 1.2287E-07 3.9552E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/left_rear_link.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.59216 0.66667 0.68235 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0.00088151 1.2287E-07 3.9552E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/left_rear_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint
+        name="left_rear_joint"
+        type="continuous">
+        <origin
+            xyz="-0.4431 -0.32219 -0.31057"
+            rpy="0 0 0" />
+        <parent
+            link="chassis" />
+        <child
+            link="left_rear_link" />
+        <axis
+            xyz="-1 0 0" />
+        <limit
+            effort="50000"
+            velocity="50000" />
+        <dynamics
+            damping="0.05"
+            friction="0.05" />
+    </joint>
+
+
+    <link
+        name="right_rear_link">
+        <inertial>
+            <origin
+                xyz="-0.00071015 2.7745E-07 2.9963E-07"
+                rpy="0 0 0" />
+            <mass
+                value="5.2535" />
+            <inertia
+                ixx="0.045037"
+                ixy="-3.8128E-10"
+                ixz="2.7195E-10"
+                iyy="0.028748"
+                iyz="-9.9419E-08"
+                izz="0.028748" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="-0.00071015 2.7745E-07 2.9963E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/right_rear_link.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.75294 0.75294 0.75294 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="-0.00071015 2.7745E-07 2.9963E-07"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file://$(find metu_description)/meshes/right_rear_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint
+        name="right_rear_joint"
+        type="continuous">
+        <origin
+            xyz="0.4431 -0.32221 -0.31054"
+            rpy="0 0 0" />
+        <parent
+            link="chassis" />
+        <child
+            link="right_rear_link" />
+        <axis
+            xyz="-1 0 0" />
+        <limit
+            effort="50000"
+            velocity="50000" />
+        <dynamics
+            damping="0.05"
+            friction="0.05" />
+    </joint>
+</robot>
