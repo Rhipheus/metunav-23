@@ -108,6 +108,14 @@ def generate_launch_description():
         launch_arguments={"use_sim_time": "True"}.items()
     )
 
+    mapviz_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_rover_localization, "launch",
+                         "mapviz.launch.py")
+        ),
+        launch_arguments={"use_sim_time": "True"}.items()
+    )
+
     navigation_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_rover_navigation, "launch",
@@ -142,6 +150,7 @@ def generate_launch_description():
     ld.add_action(gazebo_client_cmd)
     ld.add_action(gazebo_server_cmd)
     ld.add_action(localization_cmd)
+    ld.add_action(mapviz_cmd)
     ld.add_action(navigation_cmd)
     ld.add_action(spawn_cmd)
     ld.add_action(rviz_cmd)

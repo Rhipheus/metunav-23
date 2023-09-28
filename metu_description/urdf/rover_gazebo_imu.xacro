@@ -4,7 +4,7 @@
   <joint name="imu_joint" type="fixed">
     <parent link="chassis" />
     <child link="imu_link" />
-    <origin xyz="0 0 0.20" rpy="0 0 0" />
+    <origin xyz="0 0 0.20" rpy="0 0 0" /><!-- 0 0 ${-pi}-->
   </joint>
 
   <link name="imu_link">
@@ -29,7 +29,7 @@
         <ros>
           <remapping>~/out:=imu</remapping>
         </ros>
-        <initial_orientation_as_reference>true</initial_orientation_as_reference>
+        <initial_orientation_as_reference>false</initial_orientation_as_reference>
         <frame_name>imu_link</frame_name>
       </plugin>
 

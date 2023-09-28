@@ -64,7 +64,7 @@ def generate_launch_description():
         ("imu", "imu"),
         ("odom", "odometry/local"),
         ("goal", "goal_pose"),
-        #("gps/fix","gps/filtered")
+        ("gps/fix","gps/fix")
         ]
 
     return LaunchDescription([
