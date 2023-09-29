@@ -41,8 +41,8 @@ def generate_launch_description():
         #"Vis/CorGuessWinSize": "40",
         #"Vis/CorType": "0",
         #"Vis/MaxFeatures": "1000",
-        #"Vis/MinDepth": "0.0",
-        #"Vis/MaxDepth": "6.0",
+        "Vis/MinDepth": "0.0",
+        "Vis/MaxDepth": "6.0",
     }]
 
     remappings = [

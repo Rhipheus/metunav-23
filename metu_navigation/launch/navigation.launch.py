@@ -43,7 +43,7 @@ def generate_launch_description():
     params_file_cmd = DeclareLaunchArgument(
         "params_file",
         default_value=os.path.join(
-            bringup_dir, "params", "nav2_params.yaml"),
+            bringup_dir, "params", "nav2_no_map_params.yaml"),
         description="Full path to the ROS2 parameters file to use")
 
     default_bt_xml_filename = LaunchConfiguration("default_bt_xml_filename")

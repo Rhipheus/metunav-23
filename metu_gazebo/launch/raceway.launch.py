@@ -18,7 +18,7 @@ def generate_launch_description():
             pkg_path, "worlds", "sonoma_raceway.world"),
             #"initial_pose_x":"-11.0",
             #"initial_pose_y":"-11.5",
-            "initial_pose_z":"0.3",
+            "initial_pose_z":"0.29",
             #"initial_pose_yaw": "3.1"
             }.items()
     )
