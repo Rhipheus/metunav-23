@@ -13,7 +13,7 @@ class InteractiveGpsWpCommander(Node):
 
     def __init__(self):
         super().__init__(node_name="gps_wp_commander")
-        self.navigator = BasicNavigator("basic_navigator")
+        self.navigator = BasicNavigator()
 
         self.mapviz_wp_sub = self.create_subscription(
             PointStamped, "/clicked_point", self.mapviz_wp_cb, 1)
@@ -24,12 +24,13 @@ class InteractiveGpsWpCommander(Node):
         """
         if msg.header.frame_id != "wgs84":
             self.get_logger().warning(
-                "Received point from mapviz that ist not in wgs84 frame. This is not a gps point and wont be followed")
+                "Received point from mapviz that is not in wgs84 frame. This is not a gps point and wont be followed")
             return
 
-        self.navigator.waitUntilNav2Active(localizer='robot_localization')
+        self.navigator.waitUntilNav2Active(localizer="robot_localization")
         wp = [latLonYaw2Geopose(msg.point.y, msg.point.x)]
-        self.navigator.followGpsWaypoints(wp)
+        print("translated")
+        self.navigator.followWaypoints(wp)#followGpsWaypoints
         if (self.navigator.isTaskComplete()):
             self.get_logger().info("wps completed successfully")
 

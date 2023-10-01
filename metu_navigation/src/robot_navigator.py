@@ -164,9 +164,13 @@ class BasicNavigator(Node):
         else:
             return NavigationResult.UNKNOWN
 
-    def waitUntilNav2Active(self):
-        self._waitForNodeToActivate('amcl')
-        self._waitForInitialPose()
+    def waitUntilNav2Active(self,localizer='robot_localization'):
+
+        if localizer != "robot_localization":  # non-lifecycle node
+            self._waitForNodeToActivate(localizer)
+        if localizer == 'amcl':
+            self._waitForInitialPose()
+
         self._waitForNodeToActivate('bt_navigator')
         self.info('Nav2 is ready for use!')
         return
