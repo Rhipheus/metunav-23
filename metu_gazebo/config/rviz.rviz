@@ -280,6 +280,18 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /received_global_plan
       Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /local_costmap/published_footprint
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -323,25 +335,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 16.400821685791016
+      Distance: 5.894026756286621
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.07030291855335236
-        Y: 0.1396334022283554
-        Z: 0.29428017139434814
+        X: -1.0233302116394043
+        Y: 0.008977947756648064
+        Z: 4.622739315032959
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5803984999656677
+      Pitch: 1.3897963762283325
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.8635542392730713
+      Yaw: 3.0935442447662354
     Saved: ~
 Window Geometry:
   Displays:

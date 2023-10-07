@@ -42,11 +42,11 @@ def generate_launch_description():
         #"Vis/CorType": "0",
         #"Vis/MaxFeatures": "1000",
         "Vis/MinDepth": "0.0",
-        "Vis/MaxDepth": "6.0",
+        "Vis/MaxDepth": "3.0",
 #
         "Grid/DepthDecimation": "2",
         "Grid/RangeMin": "0.0",
-        "Grid/RangeMax": "6.0",
+        "Grid/RangeMax": "3.0",
         "Grid/MinClusterSize": "20",
         "Grid/MaxGroundAngle": "35",
         "Grid/NormalK": "20",
