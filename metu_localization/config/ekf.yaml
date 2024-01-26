@@ -338,9 +338,12 @@ navsat_transform:
     frequency: 30.0
     delay: 3.0
     magnetic_declination_radians: 0.0 # 0.19687314
-    yaw_offset: 0 #1.570796327
+    yaw_offset: -3.14 #1.570796327
     zero_altitude: true
-    broadcast_cartesian_transform: true
+    broadcast_cartesian_transform: false #true
+    broadcast_utm_transform: true ###
+    broadcast_utm_transform_as_parent_frame: false
     publish_filtered_gps: true
     use_odometry_yaw: true
+    #datum: [-122.454630, 38.161479, 0.0, map, base_link]
     wait_for_datum: false

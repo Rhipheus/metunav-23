@@ -28,6 +28,7 @@ def generate_launch_description():
         #"approx_sync_max_interval": 0.01,
         "publish_tf": False,
         "use_sim_time": use_sim_time,
+        #"wait_for_transform":0.1,
 
         "Optimizer/Strategy": "1",
         "Optimizer/GravitySigma": "0.0",
